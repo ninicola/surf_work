@@ -53,7 +53,7 @@ def precipitation():
 @app.route("/api/v1.0/station")
 def station():
     """Return the JSON for all the station information"""
-    # Design a query to retrieve the last 12 months of precipitation data and plot the results
+    # Design a query to retrieve station information
     sel_station=[Station.station,
                  Station.name,
                  Station.latitude,

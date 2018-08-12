@@ -34,13 +34,10 @@ app = Flask(__name__)
 #################################################
 # Flask Routes
 #################################################
-# date 1 year ago from today
-year_ago = dt.date.today() - dt.timedelta(days=730)
-year_ago
 @app.route("/api/v1.0/precipitation")
 def precipitation():
     """Return the JSON representation of the dictionary"""
-    # Design a query to retrieve the last 12 months of precipitation data and plot the results
+    # Design a query to retrieve the last 12 months of precipitation data
     sel=[Measurement.date,
          Measurement.tobs]
     day_prcp=session.query(*sel).filter((Measurement.date>year_ago)).all()
